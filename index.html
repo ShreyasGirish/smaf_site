@@ -5,105 +5,11 @@
   <title>Sri Mookambika Agro Foods LLP</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="assets/css/style.css" />
-  <meta name="description" content="Sri Mookambika Agro Foods LLP — farm-integrated gherkin and vegetable processing for global buyers. FSSC certified. 1200+ farmers. 65 FCL confirmed." />
-  <style>
-    /* Small, only-page animations and layout tweaks that build on assets/css/style.css */
-    /* Hero layers */
-    .hero {
-      position:relative;
-      min-height:72vh;
-      overflow:hidden;
-      display:flex;
-      align-items:center;
-    }
-
-    .hero-layer {
-      position:absolute;
-      inset:0;
-      will-change:transform,opacity;
-      pointer-events:none;
-    }
-
-    .hero-layer img {
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-      transform-origin:center;
-    }
-
-    /* gentle ken-burns on base layer */
-    .kb {
-      animation:kb-zoom 18s ease-in-out infinite alternate;
-    }
-    @keyframes kb-zoom {
-      from { transform: scale(1) translateY(0); }
-      to   { transform: scale(1.06) translateY(-6px); }
-    }
-
-    /* floating accent shape */
-    .accent-shape {
-      position:absolute;
-      right:28px;
-      bottom:28px;
-      width:120px;
-      height:120px;
-      background:linear-gradient(135deg, rgba(47,122,62,0.95), rgba(179,139,59,0.95));
-      border-radius:18px;
-      box-shadow:0 20px 50px rgba(10,20,10,0.18);
-      transform:translateY(0);
-      transition:transform .45s cubic-bezier(.2,.9,.2,1), box-shadow .25s ease;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:white;
-      font-weight:700;
-      font-family:Inter,system-ui;
-      z-index:12;
-    }
-    .accent-shape:hover { transform:translateY(-8px) scale(1.03); box-shadow:0 28px 70px rgba(9,18,9,0.22) }
-
-    /* subtle gradient overlay for readability */
-    .hero-overlay {
-      position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,18,10,0.18), rgba(255,255,255,0.02));mix-blend-mode:multiply;pointer-events:none;z-index:2;
-    }
-
-    /* content layout sits above layers */
-    .hero-inner {
-      position:relative;z-index:6;max-width:var(--maxw);margin:0 auto;padding:36px;display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;
-    }
-
-    .hero-left .hero-title { font-size:44px; line-height:1.02; margin:6px 0 10px }
-    .hero-left .hero-sub { color:var(--muted); margin-bottom:16px }
-
-    /* micro animated list bullets */
-    .why-list { display:flex; gap:12px; flex-wrap:wrap }
-    .why { background:var(--card); padding:10px 12px; border-radius:10px; display:flex; align-items:center; gap:10px; box-shadow:var(--shadow-1); min-width:180px }
-    .why .dot { width:10px; height:10px; background:var(--green); border-radius:50%; transform:scale(0.85); animation:dot-pulse 1400ms ease-in-out infinite; flex:0 0 auto }
-    @keyframes dot-pulse { 0%{ transform:scale(.9); opacity:.8 } 50%{ transform:scale(1.06); opacity:1 } 100%{ transform:scale(.9); opacity:.9 } }
-
-    /* improve gallery hover timing */
-    .gallery figure img { transition: transform 700ms cubic-bezier(.2,.9,.2,1), filter 400ms ease; }
-    .gallery figure:hover img { filter:contrast(1.04) saturate(1.05) }
-
-    /* small entrance for hero text parts */
-    .animate-in { opacity:0; transform:translateY(16px); transition:opacity .72s ease, transform .72s ease; }
-    .animate-in.show { opacity:1; transform:none; }
-
-    /* footer CTA strip */
-    .cta-strip { background:linear-gradient(90deg, rgba(47,122,62,0.98), rgba(179,139,59,0.98)); color:white; padding:18px; border-radius:10px; display:flex; align-items:center; justify-content:space-between; gap:12px; box-shadow:var(--shadow-1); margin-top:18px }
-
-    /* responsive */
-    @media(max-width:880px){
-      .hero-inner{grid-template-columns:1fr; padding:24px}
-      .hero-left .hero-title{font-size:30px}
-      .accent-shape{display:none}
-    }
-  </style>
+  <meta name="description" content="Sri Mookambika Agro Foods LLP — farm-integrated gherkin & vegetable processing. FSSC certified. Export-ready.">
 </head>
 <body>
 
-  <!-- shared nav -->
+  <!-- NAV -->
   <header class="site-nav">
     <div class="container">
       <div class="brand">
@@ -125,77 +31,71 @@
     </div>
   </header>
 
-  <!-- animated hero with layered parallax -->
-  <section class="hero" id="home" aria-label="Hero">
-    <div class="hero-layer hero-layer-back">
-      <!-- base image, ken-burns -->
-      <img class="bg kb" src="images/corn-field.jpg" alt="Farm landscape">
-    </div>
-
-    <div class="hero-layer" style="z-index:3;opacity:.85;transform:translateZ(0) scale(1)">
-      <!-- subtle mid layer for depth - use another image as a faint overlay if available -->
-      <img src="images/cucumber-corridor.jpg" alt="" style="opacity:.12; filter:blur(2px) saturate(.95)"/>
-    </div>
-
-    <div class="hero-overlay" aria-hidden="true"></div>
-
+  <!-- HERO -->
+  <section class="hero" id="home" role="region" aria-label="Hero">
     <div class="hero-inner">
+      <div class="hero-bg" aria-hidden="true">
+        <img class="bg" src="images/corn-field.jpg" alt="Farm landscape" />
+      </div>
+
       <div class="hero-left">
-        <div class="kicker">EXPORT | TRACEABLE | CERTIFIED</div>
+        <div class="kicker">EXPORT • TRACEABLE • CERTIFIED</div>
+        <h2 class="hero-title">Farm-integrated gherkin & vegetable processing for global buyers</h2>
+        <p class="hero-lead leadin">We partner with 1,200+ contract farmers to deliver certified ingredients and finished goods to international buyers. Confirmed pipeline: 65 FCL in the coming months.</p>
 
-        <h2 class="hero-title animate-in">Farm integrated gherkin and vegetable processing for global buyers</h2>
-
-        <p class="hero-sub animate-in">We partner with 1,200+ contract farmers to deliver certified ingredients and finished goods for export. Confirmed orders 65 FCL in the coming months.</p>
-
-        <div class="why-list animate-in" style="margin-bottom:8px">
-          <div class="why"><span class="dot"></span><div><strong>FSSC certified</strong><div class="small">Food safety</div></div></div>
-          <div class="why"><span class="dot"></span><div><strong>1200+ farmers</strong><div class="small">Traceable supply</div></div></div>
-          <div class="why"><span class="dot"></span><div><strong>65 FCL</strong><div class="small">Confirmed orders</div></div></div>
+        <div class="stats">
+          <div class="stat">
+            <strong id="count-fcl">0</strong>
+            <small>Confirmed FCL</small>
+          </div>
+          <div class="stat">
+            <strong id="count-farmers">0</strong>
+            <small>Contract farmers</small>
+          </div>
+          <div class="stat">
+            <strong>FSSC</strong>
+            <small>Food safety certified</small>
+          </div>
         </div>
 
-        <div class="animate-in">
-          <a class="btn btn-primary" id="downloadDeck" href="investor_deck.pdf" download>Request Investor Deck</a>
+        <div style="margin-top:18px">
+          <a class="btn btn-primary" href="investor_deck.pdf" id="downloadDeck" download>Request Investor Deck</a>
           <a class="btn btn-ghost" href="investors.html" style="margin-left:10px">Investor Brief</a>
-        </div>
-
-        <div class="cta-strip animate-in" style="margin-top:18px">
-          <div>
-            <div style="font-weight:700">Need documents fast?</div>
-            <div class="small">We can share COA, MSDS and export timelines on request</div>
-          </div>
-          <div>
-            <a class="btn btn-primary" href="contact.html">Contact Sales</a>
-          </div>
         </div>
       </div>
 
-      <aside class="card" aria-hidden="true" style="text-align:center">
-        <img src="images/container-loaded.jpg" alt="Container loaded with drums" style="width:100%;height:260px;object-fit:cover;border-radius:8px;margin-bottom:12px" />
-        <div class="small">Traceable batches ready for export. Kosher audit completed.</div>
+      <aside class="card" aria-hidden="true">
+        <img src="images/container-loaded.jpg" alt="Container loaded with drums" style="width:100%;height:260px;object-fit:cover;border-radius:8px" />
+        <div class="small" style="margin-top:10px">Traceable batches ready for export. Kosher audit completed.</div>
       </aside>
     </div>
-
-    <div class="accent-shape" title="Quick facts">65 FCL</div>
   </section>
 
-  <!-- trust -->
+  <!-- TRUST BAR -->
   <section class="section">
     <div class="container">
       <div class="trust reveal">
         <div class="badge">FSSC 22000</div>
         <div class="badge">STAR-K Kosher</div>
         <div class="badge">APEDA RCMC</div>
-        <div class="badge">IEC • FSSAI</div>
+        <div class="badge">IEC · FSSAI</div>
       </div>
     </div>
   </section>
 
-  <!-- gallery with staggered reveal -->
-  <section class="section" aria-label="Gallery">
+  <!-- ABOUT PREVIEW -->
+  <section class="section">
+    <div class="container">
+      <h2 class="h2">About</h2>
+      <p class="leadin reveal">Sri Mookambika Agro Foods LLP integrates farmer training, field QA and certified processing to deliver export-ready gherkins, vinegar and brine. Our focus is consistent quality, traceability and fair farmer returns.</p>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section">
     <div class="container">
       <h2 class="h2">Farming & processing highlights</h2>
-
-      <div class="gallery" id="gallery">
+      <div class="gallery reveal" id="gallery">
         <figure><img src="images/inspection-team.jpg" alt="Field inspection" loading="lazy" /></figure>
         <figure><img src="images/field-training.jpg" alt="Farmer training" loading="lazy" /></figure>
         <figure><img src="images/sowing-mulch.jpg" alt="Sowing and mulch" loading="lazy" /></figure>
@@ -206,35 +106,35 @@
     </div>
   </section>
 
-  <!-- products preview -->
-  <section class="section" id="products">
+  <!-- PRODUCTS -->
+  <section id="products" class="section">
     <div class="container">
       <h2 class="h2">Products</h2>
       <div class="grid grid-resp">
         <div class="card reveal">
           <h3 class="title">Natural Vinegar (NV)</h3>
-          <p class="small">150/300, 300/450, 80/150. Drums, pails and pouches.</p>
+          <p class="small">Grades: 150/300, 300/450, 80/150. Packaging: drums, pails, pouches.</p>
         </div>
         <div class="card reveal">
           <h3 class="title">Acetic Acid (AA)</h3>
-          <p class="small">Food and industrial grade. COA on request.</p>
+          <p class="small">Food and industrial grade acetic acid. COA available on request.</p>
         </div>
         <div class="card reveal">
           <h3 class="title">Brine (BR)</h3>
-          <p class="small">Custom brines and pickling media for private label partners.</p>
+          <p class="small">Custom brines and pickling media for private label partners and processors.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- investors teaser -->
-  <section class="section" id="investors">
+  <!-- INVESTORS -->
+  <section id="investors" class="section">
     <div class="container">
       <h2 class="h2">Investors</h2>
       <div class="grid grid-resp">
         <div class="card reveal">
           <h4>Ask</h4>
-          <p class="small"><strong>₹2–3 Crore</strong> working capital. Revenue-share plus convertible note.</p>
+          <p class="small"><strong>₹2–3 Crore</strong> working capital. Structure: revenue-share + convertible note. Use: raw materials, packing materials, logistics, capacity support.</p>
           <a class="btn btn-primary" href="investor_deck.pdf" download>Download investor deck</a>
         </div>
         <div class="card reveal">
@@ -242,15 +142,15 @@
           <ul class="small">
             <li>65 confirmed FCLs in the near pipeline</li>
             <li>FSSC & Kosher verified</li>
-            <li>1200+ contracted farmers</li>
+            <li>1200+ contracted farmers and traceability</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- contact -->
-  <section class="section" id="contact">
+  <!-- CONTACT -->
+  <section id="contact" class="section">
     <div class="container">
       <h2 class="h2">Contact</h2>
       <div class="grid grid-resp">
@@ -262,7 +162,7 @@
 
         <div class="card reveal">
           <strong>Quick message</strong>
-          <form onsubmit="event.preventDefault(); alert('Thanks — message simulated (demo)');">
+          <form onsubmit="event.preventDefault(); alert('Message sent (demo)');">
             <input name="name" placeholder="Name" style="width:100%;padding:8px;margin-top:8px;border-radius:8px;border:1px solid #eee" />
             <input name="email" placeholder="Email" style="width:100%;padding:8px;margin-top:8px;border-radius:8px;border:1px solid #eee" />
             <textarea name="message" placeholder="Message" style="width:100%;padding:8px;margin-top:8px;border-radius:8px;border:1px solid #eee;height:110px"></textarea>
@@ -274,86 +174,28 @@
   </section>
 
   <footer class="site-footer">
-    <div class="container">© 2025 Sri Mookambika Agro Foods LLP · FSSC 22000 · STAR-K Kosher · APEDA RCMC</div>
+    <div class="container">© 2025 Sri Mookambika Agro Foods LLP · FSSC 22000 · STAR-K Kosher</div>
   </footer>
 
-  <!-- lightbox -->
-  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog">
-    <img id="lbImg" src="" alt="">
-  </div>
-
   <script>
-    // reveal on scroll, staggered
-    const revealEls = document.querySelectorAll('.reveal, .animate-in');
+    // reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
     const io = new IntersectionObserver((entries)=>{
-      entries.forEach((e,i)=>{
-        if(e.isIntersecting){
-          const delay = (e.target.classList.contains('animate-in') ? 80 : 120) + (i*40);
-          setTimeout(()=> e.target.classList.add('show'), delay);
-          io.unobserve(e.target);
-        }
+      entries.forEach(e=>{
+        if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target) }
       });
     }, {threshold:0.12});
-    revealEls.forEach(r => io.observe(r));
+    reveals.forEach(r=>io.observe(r));
 
     // counters
-    function animateCount(id, to, ms=1400){
+    function animate(id, to, ms=1200){
       const el = document.getElementById(id);
       if(!el) return;
-      let cur = 0;
-      const step = Math.max(1, Math.floor(to / (ms/16)));
-      const tick = () => {
-        cur += step;
-        if(cur >= to) el.textContent = to;
-        else { el.textContent = cur; requestAnimationFrame(tick) }
-      };
+      let cur = 0; const step = Math.max(1, Math.floor(to/(ms/16)));
+      const tick = ()=>{ cur += step; if(cur>=to) el.textContent = to; else { el.textContent = cur; requestAnimationFrame(tick) } };
       requestAnimationFrame(tick);
     }
-    window.addEventListener('load', ()=> {
-      animateCount('count-fcl', 65);
-      animateCount('count-farmers', 1200);
-    });
-
-    // hero parallax on mouse move for depth
-    const hero = document.querySelector('.hero');
-    hero.addEventListener('mousemove', (e)=>{
-      const w = hero.clientWidth, h = hero.clientHeight;
-      const x = (e.clientX - w/2) / (w/2);
-      const y = (e.clientY - h/2) / (h/2);
-      document.querySelectorAll('.hero-layer').forEach((layer,i)=>{
-        const depth = (i+1) * 6;
-        layer.style.transform = `translate3d(${x*depth}px, ${y*depth}px, 0)`;
-      });
-    });
-    hero.addEventListener('mouseleave', ()=> {
-      document.querySelectorAll('.hero-layer').forEach(layer=>{
-        layer.style.transform = '';
-      });
-    });
-
-    // gallery lightbox
-    document.querySelectorAll('.gallery img').forEach(img=>{
-      img.addEventListener('click', ()=> {
-        const lb = document.getElementById('lightbox');
-        const lbImg = document.getElementById('lbImg');
-        lbImg.src = img.src;
-        lb.classList.add('open');
-        lb.setAttribute('aria-hidden','false');
-      });
-    });
-    document.getElementById('lightbox').addEventListener('click', (e)=>{
-      if(e.target.id === 'lightbox' || e.target.id === 'lbImg'){
-        const lb = document.getElementById('lightbox');
-        lb.classList.remove('open');
-        lb.setAttribute('aria-hidden','true');
-        document.getElementById('lbImg').src = '';
-      }
-    });
-
-    // small micro-interaction for CTA
-    const deckBtn = document.getElementById('downloadDeck');
-    deckBtn.addEventListener('mouseenter', ()=> deckBtn.style.transform = 'translateY(-4px) scale(1.02)');
-    deckBtn.addEventListener('mouseleave', ()=> deckBtn.style.transform = '');
+    window.addEventListener('load', ()=>{ animate('count-fcl',65); animate('count-farmers',1200); });
   </script>
 </body>
 </html>

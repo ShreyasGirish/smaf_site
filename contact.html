@@ -6,100 +6,49 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-
 <body>
-
-<header>
-  <div class="container nav">
-    <div>
-      <strong>Sri Mookambika Agro Foods LLP</strong>
-      <div class="small">Crunch of Confidence</div>
+  <header class="site-nav">
+    <div class="container">
+      <div class="brand"><img class="logo" src="images/cucumber-flower.jpg" alt="logo" /><div><h1>Sri Mookambika Agro Foods LLP</h1></div></div>
+      <nav class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="products.html">Products</a><a href="private-label.html">Private Label</a><a href="prakritva.html">Prakritva</a><a href="investors.html">Investors</a><a href="contact.html" aria-current="page">Contact</a></nav>
     </div>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="products.html">Products</a>
-      <a href="private-label.html">Private Label</a>
-      <a href="prakritva.html">Prakritva</a>
-      <a href="investors.html">Investors</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
+  </header>
 
-
-<main class="container">
-
-  <section class="section">
-    <h1>Contact Us</h1>
-    <p>
-      For business enquiries, investments, private label opportunities, or export coordination,
-      you can reach us anytime using the details below.
-    </p>
+  <section class="hero">
+    <div class="hero-inner" style="grid-template-columns:1fr 400px">
+      <div class="hero-bg"><img class="bg" src="images/corn-field.jpg" alt="Contact hero" /></div>
+      <div class="hero-left">
+        <div class="kicker">GET IN TOUCH</div>
+        <h2 class="hero-title">Contact sales, exports or investor relations</h2>
+        <p class="hero-lead leadin">We respond quickly to buyer inquiries and investor requests. Use the form or the direct contact details to reach us.</p>
+      </div>
+      <aside class="card">
+        <strong>Email</strong><br/>smafoodsindia@gmail.com<br/><br/>
+        <strong>Phone</strong><br/>+91 98453 20088<br/><br/>
+        <strong>Address</strong><br/>Ranebennur, Karnataka, India
+      </aside>
+    </div>
   </section>
 
-  <!-- CONTACT DETAILS -->
   <section class="section">
-    <div class="grid">
-      
-      <!-- DETAILS CARD -->
+    <div class="container">
+      <h2 class="h2">Quick message</h2>
       <div class="card">
-        <h3>Reach Us</h3>
-
-        <p class="small">
-          <strong>Phone:</strong><br>
-          +91 98453 20088
-        </p>
-
-        <p class="small">
-          <strong>Email:</strong><br>
-          smafoodsindia@gmail.com
-        </p>
-
-        <p class="small">
-          <strong>Address:</strong><br>
-          Sri Mookambika Agro Foods LLP<br>
-          Ranebennur, Karnataka, India
-        </p>
-
-        <p class="small">
-          <strong>Certifications:</strong><br>
-          FSSC 22000 · STAR-K Kosher · FSSAI · APEDA RCMC · IEC
-        </p>
-      </div>
-
-      <!-- CONTACT FORM -->
-      <div class="card contact-form">
-        <h3>Send us a message</h3>
-        <form>
-          <label>Name</label>
-          <input type="text" name="name" />
-
-          <label>Email</label>
-          <input type="email" name="email" />
-
-          <label>Message</label>
-          <textarea name="message"></textarea>
-
-          <button type="submit">Submit</button>
+        <form onsubmit="event.preventDefault(); alert('Message submitted (demo)');">
+          <input name="name" placeholder="Name" style="width:100%;padding:10px;margin-top:8px;border-radius:8px;border:1px solid #eee" />
+          <input name="email" placeholder="Email" style="width:100%;padding:10px;margin-top:8px;border-radius:8px;border:1px solid #eee" />
+          <textarea name="message" placeholder="Message" style="width:100%;padding:10px;margin-top:8px;border-radius:8px;border:1px solid #eee;height:120px"></textarea>
+          <div style="margin-top:10px;display:flex;gap:10px;align-items:center">
+            <button class="btn btn-primary">Send</button>
+            <a class="btn btn-ghost" href="https://wa.me/919845320088" target="_blank">WhatsApp</a>
+          </div>
         </form>
       </div>
-
     </div>
   </section>
 
-</main>
+  <footer class="site-footer"><div class="container">© 2025 Sri Mookambika Agro Foods LLP</div></footer>
 
-
-<footer class="footer">
-  <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap">
-    <div>
-      <strong>Sri Mookambika Agro Foods LLP</strong>
-      <div class="small">FSSC 22000 • STAR-K Kosher • FSSAI • APEDA RCMC</div>
-    </div>
-    <div class="small">© 2025 Sri Mookambika Agro Foods LLP</div>
-  </div>
-</footer>
-
+  <script>const reveals=document.querySelectorAll('.reveal');const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}})},{threshold:0.12});reveals.forEach(r=>io.observe(r));</script>
 </body>
 </html>

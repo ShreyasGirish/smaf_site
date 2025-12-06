@@ -7,101 +7,38 @@
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-
-<header>
-  <div class="container nav">
-    <div>
-      <strong>Sri Mookambika Agro Foods LLP</strong>
-      <div class="small">Crunch of Confidence</div>
+  <header class="site-nav">
+    <div class="container">
+      <div class="brand"><img class="logo" src="images/cucumber-flower.jpg" alt="logo" /><div><h1>Sri Mookambika Agro Foods LLP</h1></div></div>
+      <nav class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="products.html">Products</a><a href="private-label.html">Private Label</a><a href="prakritva.html" aria-current="page">Prakritva</a><a href="investors.html">Investors</a><a href="contact.html">Contact</a></nav>
     </div>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="products.html">Products</a>
-      <a href="private-label.html">Private Label</a>
-      <a href="prakritva.html">Prakritva</a>
-      <a href="investors.html">Investors</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
+  </header>
 
-<main class="container">
-  <section class="section">
-    <h1>Prakritva — Natural, Farm-Origin Products</h1>
-    <p>
-      Prakritva is our consumer-facing range focused on simple, natural products made from farm-sourced ingredients.
-      It is designed for health-conscious consumers looking for clean-label, traceable and responsibly produced foods.
-    </p>
-  </section>
-
-  <section class="section">
-    <h2>Brand Promise</h2>
-    <p class="small">
-      Prakritva stands for transparency, minimal processing and respectful use of farm produce. Each product is
-      developed to minimise waste and maximise farmer benefit while delivering consistent quality to consumers.
-    </p>
-  </section>
-
-  <section class="section">
-    <h2>Initial Product Ideas</h2>
-    <div class="grid" style="margin-top:12px">
-      <div class="card">
-        <h3>Gherkin Powder</h3>
-        <p class="small">Dehydrated & finely milled gherkin powder for seasoning, sauces and snack manufacturers.</p>
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-bg"><img class="bg" src="images/cucumber-corridor.jpg" alt="Crop corridor" /></div>
+      <div class="hero-left">
+        <div class="kicker">PRAKRITVA — OUR BRAND</div>
+        <h2 class="hero-title">Natural, farm-origin foods — small batch, premium quality</h2>
+        <p class="hero-lead leadin">Prakritva is our consumer-facing line focused on minimal processing, clean labels and traceable sourcing.</p>
       </div>
-
-      <div class="card">
-        <h3>Kokum / Fruit Concentrates</h3>
-        <p class="small">Cold-pressed or concentration processes for beverages and culinary applications.</p>
-      </div>
-
-      <div class="card">
-        <h3>Pickled Blends (Retail)</h3>
-        <p class="small">Small-batch pickled vegetable blends with clean ingredient lists and attractive retail packaging.</p>
-      </div>
-
-      <div class="card">
-        <h3>Ready-to-Use Marinades</h3>
-        <p class="small">Natural marinades using our vinegar & brine formulations, designed for quick consumer use.</p>
-      </div>
+      <aside class="card"><img src="images/bowl-gherkins.jpg" alt="Products" style="width:100%;height:260px;object-fit:cover;border-radius:8px" /><div class="small" style="margin-top:10px">Product samples and retail packaging options available.</div></aside>
     </div>
   </section>
 
   <section class="section">
-    <h2>Go-to-Market & Quality</h2>
-    <p class="small">
-      Each Prakritva SKU will be piloted through small-batch runs, taste and shelf-life testing, and brand-compliant packaging.
-      We will use our FSSC-certified facility for production and regulatory compliance for target markets.
-    </p>
-  </section>
-
-  <section class="section">
-    <h2>Private Label vs Prakritva</h2>
-    <p class="small">
-      Prakritva is our in-house consumer brand. Private Label services remain available for third-party brands who want custom manufacturing.
-      Both streams share the same quality and traceability standards.
-    </p>
-  </section>
-
-  <section class="section">
-    <div class="card">
-      <h3>Interested in a Prakritva partnership or sample?</h3>
-      <p class="small">Contact us to discuss pilot runs, packaging minimums and sample delivery.</p>
-      <a class="btn" href="contact.html">Contact Us</a>
+    <div class="container">
+      <h2 class="h2">Planned SKUs</h2>
+      <div class="grid grid-resp">
+        <div class="card"><strong>Gherkin Powder</strong><div class="small">Seasoning & industrial use.</div></div>
+        <div class="card"><strong>Fruit Concentrates</strong><div class="small">Beverage & culinary use.</div></div>
+        <div class="card"><strong>Retail Pickles</strong><div class="small">Small-batch, clean labels.</div></div>
+      </div>
     </div>
   </section>
-</main>
 
-<footer class="footer">
-  <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap">
-    <div>
-      <strong>Sri Mookambika Agro Foods LLP</strong>
-      <div class="small">FSSC 22000 · STAR-K Kosher · FSSAI · APEDA RCMC</div>
-    </div>
-    <div class="small">© 2025 Sri Mookambika Agro Foods LLP</div>
-  </div>
-</footer>
+  <footer class="site-footer"><div class="container">© 2025 Prakritva — Sri Mookambika Agro Foods LLP</div></footer>
 
+  <script>const reveals=document.querySelectorAll('.reveal');const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}})},{threshold:0.12});reveals.forEach(r=>io.observe(r));</script>
 </body>
 </html>
