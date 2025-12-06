@@ -4,41 +4,42 @@
   <meta charset="utf-8" />
   <title>Private Label — Sri Mookambika Agro Foods LLP</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Private label manufacturing and co-packing for brands." />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
   <header class="site-nav">
     <div class="container">
-      <div class="brand"><img class="logo" src="images/cucumber-flower.jpg" alt="logo" /><div><h1>Sri Mookambika Agro Foods LLP</h1></div></div>
-      <nav class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="products.html">Products</a><a href="private-label.html" aria-current="page">Private Label</a><a href="prakritva.html">Prakritva</a><a href="investors.html">Investors</a><a href="contact.html">Contact</a></nav>
+      <div class="brand"><img class="logo" src="images/cucumber-flower.jpg" alt="SMAF logo" /><div><h1>Sri Mookambika Agro Foods LLP</h1><div class="small">Export · Traceable · Certified</div></div></div>
+      <nav class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="products.html">Products</a><a href="private-label.html" class="active">Private Label</a><a href="prakritva.html">Prakritva</a><a href="investors.html">Investors</a><a href="contact.html">Contact</a></nav>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-bg"><img class="bg" src="images/fresh-gherkins.jpg" alt="Fresh gherkins" /></div>
-      <div class="hero-left">
-        <div class="kicker">PRIVATE LABEL</div>
-        <h2 class="hero-title">Custom manufacturing & co-packing for brands</h2>
-        <p class="hero-lead leadin">Recipe matching, small pilot runs, scale-up and export-ready packaging — we handle end-to-end private label manufacturing for food brands.</p>
+  <main id="main-content" tabindex="-1">
+    <section class="hero">
+      <div class="bg-wrap"><img src="images/fresh-gherkins.jpg" alt="Fresh gherkins" /></div>
+      <div class="hero-inner container">
+        <div>
+          <div class="kicker pill">Private Label</div>
+          <h2 class="hero-title">Custom manufacturing and co-packing for brands</h2>
+          <p class="hero-lead leadin">Pilot runs, QA, scale-up, and export-ready packaging. We handle end-to-end private label manufacturing.</p>
+        </div>
+        <aside class="card card-side"><img src="images/buying-loading.jpg" alt="Loading" style="width:100%;height:260px;object-fit:cover;border-radius:8px" /></aside>
       </div>
-      <aside class="card"><img src="images/buying-loading.jpg" alt="Loading" style="width:100%;height:260px;object-fit:cover;border-radius:8px" /><div class="small" style="margin-top:10px">Flexible batch sizes and compliant documentation.</div></aside>
-    </div>
-  </section>
+    </section>
 
-  <section class="section">
-    <div class="container">
-      <h2 class="h2">How we work</h2>
-      <div class="grid grid-resp">
-        <div class="card"><h4 class="title">Pilot & QA</h4><p class="small">Pilot samples, shelf-life and QA testing.</p></div>
-        <div class="card"><h4 class="title">Scale</h4><p class="small">Flexible batch sizes and packing options.</p></div>
-        <div class="card"><h4 class="title">Certification</h4><p class="small">We provide COA, MSDS, and export documentation.</p></div>
+    <section class="section">
+      <div class="container grid resp">
+        <div class="card reveal"><h3>Pilot & QA</h3><p class="muted">Pilot samples, shelf-life and QA testing.</p></div>
+        <div class="card reveal"><h3>Scale</h3><p class="muted">Flexible batch sizes and packing options.</p></div>
+        <div class="card reveal"><h3>Certification</h3><p class="muted">COA, MSDS and export documentation provided.</p></div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <footer class="site-footer"><div class="container">© 2025 Sri Mookambika Agro Foods LLP</div></footer>
-
-  <script>const reveals=document.querySelectorAll('.reveal');const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}})},{threshold:0.12});reveals.forEach(r=>io.observe(r));</script>
+  <footer class="site-footer"><div class="container">© <span id="year"></span> Sri Mookambika Agro Foods LLP</div></footer>
+  <div class="lightbox" aria-hidden="true"><img alt="" /></div>
+  <script src="assets/js/main.js" defer></script>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>

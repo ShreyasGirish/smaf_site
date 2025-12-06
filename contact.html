@@ -4,51 +4,57 @@
   <meta charset="utf-8" />
   <title>Contact — Sri Mookambika Agro Foods LLP</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Contact Sri Mookambika Agro Foods LLP for sales, exports and investor relations." />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
   <header class="site-nav">
     <div class="container">
-      <div class="brand"><img class="logo" src="images/cucumber-flower.jpg" alt="logo" /><div><h1>Sri Mookambika Agro Foods LLP</h1></div></div>
-      <nav class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="products.html">Products</a><a href="private-label.html">Private Label</a><a href="prakritva.html">Prakritva</a><a href="investors.html">Investors</a><a href="contact.html" aria-current="page">Contact</a></nav>
+      <div class="brand"><img class="logo" src="images/cucumber-flower.jpg" alt="SMAF logo" /><div><h1>Sri Mookambika Agro Foods LLP</h1><div class="small">Export · Traceable · Certified</div></div></div>
+      <nav class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="products.html">Products</a><a href="private-label.html">Private Label</a><a href="prakritva.html">Prakritva</a><a href="investors.html">Investors</a><a href="contact.html" class="active">Contact</a></nav>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="hero-inner" style="grid-template-columns:1fr 400px">
-      <div class="hero-bg"><img class="bg" src="images/corn-field.jpg" alt="Contact hero" /></div>
-      <div class="hero-left">
-        <div class="kicker">GET IN TOUCH</div>
-        <h2 class="hero-title">Contact sales, exports or investor relations</h2>
-        <p class="hero-lead leadin">We respond quickly to buyer inquiries and investor requests. Use the form or the direct contact details to reach us.</p>
+  <main id="main-content" tabindex="-1">
+    <section class="hero">
+      <div class="bg-wrap"><img src="images/corn-landscape.jpg" alt="Contact hero" /></div>
+      <div class="hero-inner container">
+        <div>
+          <div class="kicker pill">Get in Touch</div>
+          <h2 class="hero-title">Contact sales, exports or investor relations</h2>
+          <p class="hero-lead leadin">We respond quickly to buyer inquiries and investor requests. Use the form or the direct contact details below.</p>
+        </div>
+        <aside class="card card-side">
+          <strong>Email</strong><br/>smafoodsindia@gmail.com<br/><br/>
+          <strong>Phone</strong><br/>+91 98453 20088<br/><br/>
+          <strong>Address</strong><br/>Ranebennur, Karnataka, India
+        </aside>
       </div>
-      <aside class="card">
-        <strong>Email</strong><br/>smafoodsindia@gmail.com<br/><br/>
-        <strong>Phone</strong><br/>+91 98453 20088<br/><br/>
-        <strong>Address</strong><br/>Ranebennur, Karnataka, India
-      </aside>
-    </div>
-  </section>
+    </section>
 
-  <section class="section">
-    <div class="container">
-      <h2 class="h2">Quick message</h2>
-      <div class="card">
-        <form onsubmit="event.preventDefault(); alert('Message submitted (demo)');">
-          <input name="name" placeholder="Name" style="width:100%;padding:10px;margin-top:8px;border-radius:8px;border:1px solid #eee" />
-          <input name="email" placeholder="Email" style="width:100%;padding:10px;margin-top:8px;border-radius:8px;border:1px solid #eee" />
-          <textarea name="message" placeholder="Message" style="width:100%;padding:10px;margin-top:8px;border-radius:8px;border:1px solid #eee;height:120px"></textarea>
-          <div style="margin-top:10px;display:flex;gap:10px;align-items:center">
-            <button class="btn btn-primary">Send</button>
-            <a class="btn btn-ghost" href="https://wa.me/919845320088" target="_blank">WhatsApp</a>
-          </div>
-        </form>
+    <section class="section">
+      <div class="container">
+        <h3 class="h2">Quick message</h3>
+        <div class="card">
+          <!-- Example Formspree usage. Replace action with your Formspree endpoint or use Netlify forms if you prefer -->
+          <form action="https://formspree.io/f/your-form-id" method="POST">
+            <label class="small">Name</label><input name="name" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #eee;margin-top:6px"/>
+            <label class="small" style="margin-top:8px;display:block">Email</label><input type="email" name="email" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #eee;margin-top:6px"/>
+            <label class="small" style="margin-top:8px;display:block">Message</label><textarea name="message" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #eee;margin-top:6px;height:120px"></textarea>
+            <div style="margin-top:10px;display:flex;gap:10px">
+              <button class="btn btn-primary" type="submit">Send</button>
+              <a class="btn btn-ghost" href="https://wa.me/919845320088" target="_blank" rel="noopener">WhatsApp</a>
+            </div>
+          </form>
+          <div class="small" style="margin-top:8px">Note: update the action attribute to your Formspree endpoint or remove action to keep form non-functional during tests.</div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <footer class="site-footer"><div class="container">© 2025 Sri Mookambika Agro Foods LLP</div></footer>
-
-  <script>const reveals=document.querySelectorAll('.reveal');const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}})},{threshold:0.12});reveals.forEach(r=>io.observe(r));</script>
+  <footer class="site-footer"><div class="container">© <span id="year"></span> Sri Mookambika Agro Foods LLP</div></footer>
+  <div class="lightbox" aria-hidden="true"><img alt="" /></div>
+  <script src="assets/js/main.js" defer></script>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>

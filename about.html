@@ -4,20 +4,23 @@
   <meta charset="utf-8" />
   <title>About — Sri Mookambika Agro Foods LLP</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="About Sri Mookambika Agro Foods LLP — farmer-first supply chain and certified processing." />
   <link rel="stylesheet" href="assets/css/style.css" />
-  <meta name="description" content="About Sri Mookambika Agro Foods LLP — farm to shipment processing, FSSC certified, farmer training, traceability.">
 </head>
 <body>
-
   <header class="site-nav">
     <div class="container">
       <div class="brand">
         <img class="logo" src="images/cucumber-flower.jpg" alt="SMAF logo" />
-        <div><h1>Sri Mookambika Agro Foods LLP</h1></div>
+        <div>
+          <h1>Sri Mookambika Agro Foods LLP</h1>
+          <div class="small">Export · Traceable · Certified</div>
+        </div>
       </div>
+
       <nav class="nav-links">
         <a href="index.html">Home</a>
-        <a href="about.html" aria-current="page">About</a>
+        <a href="about.html" class="active">About</a>
         <a href="products.html">Products</a>
         <a href="private-label.html">Private Label</a>
         <a href="prakritva.html">Prakritva</a>
@@ -27,66 +30,61 @@
     </div>
   </header>
 
-  <section class="hero" aria-label="About">
-    <div class="hero-inner">
-      <div class="hero-bg"><img class="bg" src="images/corn-landscape.jpg" alt="Field landscape" /></div>
-      <div class="hero-left">
-        <div class="kicker">OUR STORY</div>
-        <h2 class="hero-title">Farm-integrated processing built for reliability and traceability</h2>
-        <p class="hero-lead leadin">We started by aggregating quality produce and supporting farmers with agronomy and inputs. Today our certified facility processes and ships to global markets with full documentation and quality control.</p>
-        <div class="stats" style="margin-top:12px">
-          <div class="stat"><strong>1200+</strong><small>Contract farmers</small></div>
-          <div class="stat"><strong>65 FCL</strong><small>Confirmed pipeline</small></div>
+  <main id="main-content" tabindex="-1">
+    <section class="hero">
+      <div class="bg-wrap"><img src="images/corn-landscape.jpg" alt="Field landscape" /></div>
+      <div class="hero-inner container">
+        <div>
+          <div class="kicker pill">Our Story</div>
+          <h2 class="hero-title">Farm-integrated processing built for reliability and traceability</h2>
+          <p class="hero-lead leadin">We aggregate quality produce, support farmers with inputs and training, and operate a certified facility for export-grade processing.</p>
         </div>
+        <aside class="card card-side">
+          <img src="images/fresh-gherkins.jpg" alt="Fresh gherkins" style="width:100%;height:260px;object-fit:cover;border-radius:8px" />
+          <div class="small" style="margin-top:10px">Fresh harvest, immediate processing.</div>
+        </aside>
       </div>
+    </section>
 
-      <aside class="card">
-        <img src="images/fresh-gherkins.jpg" alt="Fresh gherkins" style="width:100%;height:260px;object-fit:cover;border-radius:8px" />
-        <div class="small" style="margin-top:10px">Fresh harvest, immediate processing to lock quality.</div>
-      </aside>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h2 class="h2">Mission & Model</h2>
-      <div class="grid grid-resp">
-        <div class="card">
-          <h3 class="title">Mission</h3>
-          <p class="small">Build a reliable, traceable supply chain that benefits farmers and international buyers.</p>
+    <section class="section">
+      <div class="container grid resp">
+        <div class="card reveal">
+          <h3>Mission</h3>
+          <p class="muted">To build a transparent farm-to-export supply chain that benefits farmers and delivers reliable products to international partners.</p>
         </div>
-        <div class="card">
-          <h3 class="title">How we operate</h3>
-          <ul class="small">
-            <li>Field training and agronomy support</li>
+        <div class="card reveal">
+          <h3>How we operate</h3>
+          <ul class="muted">
+            <li>Field training and input support</li>
             <li>On-field QA and harvest scheduling</li>
-            <li>FSSC-certified processing and export documentation</li>
+            <li>FSSC-certified processing and documentation</li>
           </ul>
         </div>
+        <div class="card reveal">
+          <h3>Milestones</h3>
+          <p class="muted">2020 founded · 2022 FSSC 22000 · 2024 STAR-K Kosher audit</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section">
-    <div class="container">
-      <h2 class="h2">Certifications</h2>
-      <div class="trust">
-        <div class="badge">FSSC 22000</div>
-        <div class="badge">STAR-K Kosher</div>
-        <div class="badge">APEDA RCMC</div>
-        <div class="badge">IEC • FSSAI</div>
+    <section class="section" id="certifications">
+      <div class="container">
+        <h3 class="h2">Certifications</h3>
+        <p class="leadin muted">Official audits and certificates supporting our exports. Click a certificate to enlarge.</p>
+        <div class="cert-grid">
+          <div class="cert"><img src="images/certificate-placeholder-1.jpg" alt="Certificate placeholder 1"><div class="small">STAR-K Kosher</div></div>
+          <div class="cert"><img src="images/certificate-placeholder-2.jpg" alt="Certificate placeholder 2"><div class="small">FSSC 22000</div></div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer class="site-footer">
-    <div class="container">© 2025 Sri Mookambika Agro Foods LLP</div>
+    <div class="container">© <span id="year"></span> Sri Mookambika Agro Foods LLP</div>
   </footer>
 
-  <script>
-    const reveals = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target) } }) }, {threshold:0.12});
-    reveals.forEach(r=>io.observe(r));
-  </script>
+  <div class="lightbox" aria-hidden="true"><img alt="" /></div>
+  <script src="assets/js/main.js" defer></script>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>

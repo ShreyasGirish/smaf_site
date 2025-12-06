@@ -4,41 +4,42 @@
   <meta charset="utf-8" />
   <title>Prakritva — Sri Mookambika Agro Foods LLP</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Prakritva brand — small batch, premium, traceable products." />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
   <header class="site-nav">
     <div class="container">
-      <div class="brand"><img class="logo" src="images/cucumber-flower.jpg" alt="logo" /><div><h1>Sri Mookambika Agro Foods LLP</h1></div></div>
-      <nav class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="products.html">Products</a><a href="private-label.html">Private Label</a><a href="prakritva.html" aria-current="page">Prakritva</a><a href="investors.html">Investors</a><a href="contact.html">Contact</a></nav>
+      <div class="brand"><img class="logo" src="images/cucumber-flower.jpg" alt="SMAF logo" /><div><h1>Sri Mookambika Agro Foods LLP</h1><div class="small">Export · Traceable · Certified</div></div></div>
+      <nav class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="products.html">Products</a><a href="private-label.html">Private Label</a><a href="prakritva.html" class="active">Prakritva</a><a href="investors.html">Investors</a><a href="contact.html">Contact</a></nav>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-bg"><img class="bg" src="images/cucumber-corridor.jpg" alt="Crop corridor" /></div>
-      <div class="hero-left">
-        <div class="kicker">PRAKRITVA — OUR BRAND</div>
-        <h2 class="hero-title">Natural, farm-origin foods — small batch, premium quality</h2>
-        <p class="hero-lead leadin">Prakritva is our consumer-facing line focused on minimal processing, clean labels and traceable sourcing.</p>
+  <main id="main-content" tabindex="-1">
+    <section class="hero">
+      <div class="bg-wrap"><img src="images/cucumber-corridor.jpg" alt="Crops corridor" /></div>
+      <div class="hero-inner container">
+        <div>
+          <div class="kicker pill">Prakritva</div>
+          <h2 class="hero-title">Natural, farm-origin foods — small batch, premium quality</h2>
+          <p class="hero-lead leadin">Prakritva is our consumer brand focused on minimal processing, clean labels and traceable sourcing.</p>
+        </div>
+        <aside class="card card-side"><img src="images/bowl-gherkins.jpg" alt="Products" style="width:100%;height:260px;object-fit:cover;border-radius:8px" /></aside>
       </div>
-      <aside class="card"><img src="images/bowl-gherkins.jpg" alt="Products" style="width:100%;height:260px;object-fit:cover;border-radius:8px" /><div class="small" style="margin-top:10px">Product samples and retail packaging options available.</div></aside>
-    </div>
-  </section>
+    </section>
 
-  <section class="section">
-    <div class="container">
-      <h2 class="h2">Planned SKUs</h2>
-      <div class="grid grid-resp">
-        <div class="card"><strong>Gherkin Powder</strong><div class="small">Seasoning & industrial use.</div></div>
-        <div class="card"><strong>Fruit Concentrates</strong><div class="small">Beverage & culinary use.</div></div>
-        <div class="card"><strong>Retail Pickles</strong><div class="small">Small-batch, clean labels.</div></div>
+    <section class="section">
+      <div class="container grid resp">
+        <div class="card reveal"><strong>Gherkin Powder</strong><div class="muted">Seasoning and industrial use.</div></div>
+        <div class="card reveal"><strong>Fruit Concentrates</strong><div class="muted">Beverage and culinary uses.</div></div>
+        <div class="card reveal"><strong>Retail Pickles</strong><div class="muted">Small-batch, clean label packaging.</div></div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <footer class="site-footer"><div class="container">© 2025 Prakritva — Sri Mookambika Agro Foods LLP</div></footer>
-
-  <script>const reveals=document.querySelectorAll('.reveal');const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}})},{threshold:0.12});reveals.forEach(r=>io.observe(r));</script>
+  <footer class="site-footer"><div class="container">© <span id="year"></span> Prakritva — Sri Mookambika Agro Foods LLP</div></footer>
+  <div class="lightbox" aria-hidden="true"><img alt="" /></div>
+  <script src="assets/js/main.js" defer></script>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>

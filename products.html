@@ -4,62 +4,76 @@
   <meta charset="utf-8" />
   <title>Products — Sri Mookambika Agro Foods LLP</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Products — Natural Vinegar, Acetic Acid, Brine. Export grades and packaging." />
   <link rel="stylesheet" href="assets/css/style.css" />
-  <meta name="description" content="Products — Natural Vinegar, Acetic Acid, Brine. Export grades and packaging.">
 </head>
 <body>
   <header class="site-nav">
     <div class="container">
-      <div class="brand"><img class="logo" src="images/cucumber-flower.jpg" alt="logo" /><div><h1>Sri Mookambika Agro Foods LLP</h1></div></div>
-      <nav class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="products.html" aria-current="page">Products</a><a href="private-label.html">Private Label</a><a href="prakritva.html">Prakritva</a><a href="investors.html">Investors</a><a href="contact.html">Contact</a></nav>
+      <div class="brand">
+        <img class="logo" src="images/cucumber-flower.jpg" alt="SMAF logo" />
+        <div><h1>Sri Mookambika Agro Foods LLP</h1><div class="small">Export · Traceable · Certified</div></div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html" class="active">Products</a>
+        <a href="private-label.html">Private Label</a>
+        <a href="prakritva.html">Prakritva</a>
+        <a href="investors.html">Investors</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-bg"><img class="bg" src="images/cucumber-corridor.jpg" alt="Crop corridor" /></div>
-      <div class="hero-left">
-        <div class="kicker">PRODUCT RANGE</div>
-        <h2 class="hero-title">Industrial and consumer-grade solutions, export ready</h2>
-        <p class="hero-lead leadin">Manufacturing, quality control, and packing for vinegar, acetic acid and brine — flexible volumes and packaging for private label and industrial buyers.</p>
-      </div>
-      <aside class="card"><img src="images/buying-trays.jpg" alt="Buying" style="width:100%;height:260px;object-fit:cover;border-radius:8px" /><div class="small" style="margin-top:10px">Sourced and processed under strict QA.</div></aside>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h2 class="h2">Core SKUs & Packaging</h2>
-      <div class="grid grid-resp">
-        <div class="card">
-          <h3 class="title">Natural Vinegar (NV)</h3>
-          <p class="small">Export grades and retail blends. Packaging: drums, pails, bottles.</p>
+  <main id="main-content" tabindex="-1">
+    <section class="hero">
+      <div class="bg-wrap"><img src="images/cucumber-corridor.jpg" alt="Crop corridor" /></div>
+      <div class="hero-inner container">
+        <div>
+          <div class="kicker pill">Product Range</div>
+          <h2 class="hero-title">Industrial and consumer-grade solutions, export ready</h2>
+          <p class="hero-lead leadin">Vinegar, acetic acid and brine — flexible volumes and packaging for private label and industrial buyers.</p>
         </div>
-        <div class="card">
-          <h3 class="title">Acetic Acid (AA)</h3>
-          <p class="small">Food and industrial grade, with COA and testing.</p>
+        <aside class="card card-side">
+          <img src="images/buying-trays.jpg" alt="Buying trays" style="width:100%;height:260px;object-fit:cover;border-radius:8px" />
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid resp">
+        <div class="card reveal">
+          <h3>Natural Vinegar (NV)</h3>
+          <p class="muted">Grades: 150/300, 300/450, 80/150. Packaging: drums, pails, bottles. COA available on request.</p>
         </div>
-        <div class="card">
-          <h3 class="title">Brine (BR)</h3>
-          <p class="small">Custom brine systems for pickles and food processors.</p>
+        <div class="card reveal">
+          <h3>Acetic Acid (AA)</h3>
+          <p class="muted">Food and industrial grade acetic acid. Lab tested and COA provided.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Brine (BR)</h3>
+          <p class="muted">Custom brines for pickling and food processors. Private label available.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section">
-    <div class="container">
-      <h2 class="h2">Packaging & Logistics</h2>
-      <div class="grid grid-resp">
-        <div class="card"><strong>Drums</strong><p class="small">Food-grade lined drums for exports.</p></div>
-        <div class="card"><strong>IBC & Pails</strong><p class="small">Bulk handling solutions.</p></div>
-        <div class="card"><strong>Private Label</strong><p class="small">Custom labelling and formulation.</p></div>
+    <section class="section">
+      <div class="container">
+        <h3 class="h2">Packaging & Logistics</h3>
+        <div class="grid resp">
+          <div class="card reveal"><strong>Drums</strong><p class="muted">Food-grade lined drums for exports.</p></div>
+          <div class="card reveal"><strong>IBC & Pails</strong><p class="muted">Bulk handling solutions.</p></div>
+          <div class="card reveal"><strong>Private Label</strong><p class="muted">Custom labelling and formulation.</p></div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <footer class="site-footer"><div class="container">© 2025 Sri Mookambika Agro Foods LLP</div></footer>
-
-  <script>const reveals=document.querySelectorAll('.reveal');const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}})},{threshold:0.12});reveals.forEach(r=>io.observe(r));</script>
+  <footer class="site-footer"><div class="container">© <span id="year"></span> Sri Mookambika Agro Foods LLP</div></footer>
+  <div class="lightbox" aria-hidden="true"><img alt="" /></div>
+  <script src="assets/js/main.js" defer></script>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
