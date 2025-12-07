@@ -1,128 +1,600 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Sri Mookambika Agro Foods LLP</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Sri Mookambika Agro Foods LLP — farm integrated gherkin and vegetable processing. FSSC certified. Traceable supply." />
-  <meta property="og:title" content="Sri Mookambika Agro Foods LLP" />
-  <meta property="og:description" content="Farm integrated gherkin and vegetable processing for export. Certified, traceable supply." />
-  <link rel="stylesheet" href="assets/css/style.css" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Sri Mookambika Agro Foods — Fresh produce • Farmer first</title>
+<style>
+  :root{
+    --bg:#071015;
+    --card:#0f1a1d;
+    --muted:#9fb0b3;
+    --accent:#26a65b;
+    --glass: rgba(255,255,255,0.03);
+    --radius:14px;
+    --maxw:1200px;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    background:linear-gradient(180deg,var(--bg),#051015 60%);
+    color:#dceff0;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.45;
+  }
+
+  .wrap{
+    max-width:var(--maxw);
+    margin:28px auto;
+    padding:28px;
+  }
+
+  header{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    justify-content:space-between;
+    margin-bottom:36px;
+  }
+  .brand{
+    display:flex;
+    gap:12px;
+    align-items:center;
+  }
+  .logo{
+    width:56px;
+    height:56px;
+    display:grid;
+    place-items:center;
+    background:linear-gradient(135deg,#0e7a50,#2db06d);
+    border-radius:10px;
+    box-shadow:0 8px 22px rgba(0,0,0,0.6), inset 0 -4px 8px rgba(255,255,255,0.02);
+    font-weight:700;
+    color:#fff;
+    font-size:18px;
+  }
+  .brand h1{
+    margin:0;
+    font-size:20px;
+    letter-spacing:-0.2px;
+  }
+  header nav{display:flex;gap:18px;align-items:center}
+  header nav a{
+    color:var(--muted);
+    text-decoration:none;
+    font-weight:600;
+    transition:color .18s ease;
+    font-size:14px;
+  }
+  header nav a:hover{color:#fff}
+
+  .hero{
+    display:grid;
+    grid-template-columns:1fr 420px;
+    gap:36px;
+    align-items:start;
+    margin-top:20px;
+  }
+
+  .hero-left h2{
+    font-size:46px;
+    margin:10px 0 18px 0;
+    line-height:1.02;
+    letter-spacing:-0.6px;
+    font-weight:800;
+  }
+  .lead{
+    color:var(--muted);
+    max-width:680px;
+    margin-bottom:22px;
+  }
+
+  .cta{
+    display:flex;
+    gap:18px;
+    align-items:center;
+  }
+  .btn{
+    background:var(--accent);
+    color:white;
+    padding:12px 18px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:700;
+    box-shadow: 0 8px 18px rgba(38,166,91,0.14);
+  }
+  .small-muted{color:var(--muted);font-size:14px}
+
+  .row{
+    display:flex;
+    gap:22px;
+    margin-top:22px;
+    flex-wrap:wrap;
+  }
+  .card{
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius:var(--radius);
+    padding:18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.55);
+    min-width:220px;
+  }
+  .card h4{margin:0 0 8px 0}
+  .badge{background:rgba(255,255,255,0.03);padding:8px;border-radius:10px;color:var(--muted);font-weight:600}
+
+  .hero-right{
+    display:flex;
+    gap:18px;
+    align-items:flex-start;
+    justify-content:flex-end;
+  }
+  .thumbs{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .thumbs button{
+    width:84px;
+    height:84px;
+    border-radius:12px;
+    overflow:hidden;
+    padding:0;border:0;background:none;cursor:pointer;
+    box-shadow:0 8px 20px rgba(0,0,0,0.5);
+    transition:transform .22s ease, box-shadow .22s ease, outline .12s;
+  }
+  .thumbs button:focus{outline:3px solid rgba(38,166,91,0.18)}
+  .thumbs img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .thumbs button:hover{transform:translateY(-6px);box-shadow:0 14px 36px rgba(0,0,0,0.6)}
+
+  .gallery-preview{
+    width:320px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    padding:12px;
+    border-radius:14px;
+  }
+  .gallery-preview img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+    border-radius:10px;
+    display:block;
+  }
+  .gallery-caption{color:var(--muted);padding-top:8px;font-size:14px}
+
+  .sections{
+    display:grid;
+    grid-template-columns: 1fr 360px;
+    gap:32px;
+    margin-top:48px;
+    align-items:start;
+  }
+  h3.section-title{font-size:18px;margin:0 0 12px 0}
+  .about p{color:var(--muted)}
+  ul.features{padding-left:18px}
+  .features li{margin:10px 0;color:var(--muted)}
+
+  .gallery{
+    margin-top:40px;
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:16px;
+  }
+  .gallery .item{
+    background:var(--glass);
+    border-radius:12px;
+    overflow:hidden;
+    height:160px;
+    display:block;
+    position:relative;
+    cursor:pointer;
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+    transition:transform .22s ease;
+    text-decoration:none;color:inherit;
+  }
+  .gallery .item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .gallery .meta{
+    position:absolute; left:8px; bottom:8px; right:8px;
+    background:rgba(0,0,0,0.45); padding:8px 10px; border-radius:10px;
+    color:#fff; font-size:13px; display:flex; justify-content:space-between; align-items:center;
+  }
+  .gallery .item:hover{transform:translateY(-7px)}
+
+  footer{
+    margin-top:64px;
+    padding:28px;
+    color:var(--muted);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+
+  @media (max-width:980px){
+    .hero{grid-template-columns:1fr}
+    .hero-right{justify-content:flex-start}
+    .gallery{grid-template-columns:repeat(2, 1fr)}
+    .sections{grid-template-columns:1fr}
+    header{flex-direction:column;align-items:flex-start;gap:12px}
+  }
+
+  .fadein{
+    opacity:0;
+    transform:translateY(10px);
+    transition:opacity .6s ease, transform .6s ease;
+    will-change:opacity,transform;
+  }
+  .fadein.visible{
+    opacity:1;
+    transform:none;
+  }
+
+  .lightbox{
+    position:fixed;
+    top:0;left:0;right:0;bottom:0;
+    display:none;
+    background:rgba(0,0,0,0.85);
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+    padding:24px;
+  }
+  .lightbox .box{
+    max-width:1100px;
+    width:100%;
+    border-radius:12px;
+    overflow:hidden;
+    background:#071217;
+    box-shadow:0 40px 120px rgba(0,0,0,0.7);
+    position:relative;
+  }
+  .lightbox img{width:100%;height:auto;display:block}
+  .lightbox .close{
+    position:absolute; top:18px; right:18px; color:#fff; cursor:pointer; font-size:20px;
+    background:rgba(255,255,255,0.06); padding:8px 10px; border-radius:8px;
+  }
+  .lightbox .caption{
+    padding:12px 18px;
+    color:var(--muted);
+    font-size:14px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+  }
+  .lb-nav{
+    position:absolute; top:50%; transform:translateY(-50%); font-size:30px; color:#fff; cursor:pointer;
+    padding:6px 10px; background:rgba(0,0,0,0.25); border-radius:8px;
+  }
+  .lb-prev{left:12px}
+  .lb-next{right:12px}
+
+  .sep{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.02),transparent);margin:26px 0}
+
+  /* small helper */
+  .visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+</style>
 </head>
 <body>
-  <header class="site-nav" role="banner">
-    <div class="container">
-      <div class="brand">
-        <img class="logo" src="images/cucumber-flower.jpg" alt="SMAF logo" />
-        <div>
-          <h1>Sri Mookambika Agro Foods LLP</h1>
-          <div class="small">Export · Traceable · Certified</div>
-        </div>
-      </div>
 
-      <nav class="nav-links" role="navigation" aria-label="Main navigation">
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
-        <a href="products.html">Products</a>
-        <a href="private-label.html">Private Label</a>
-        <a href="prakritva.html">Prakritva</a>
-        <a href="investors.html">Investors</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+<div class="wrap">
+
+  <header>
+    <div class="brand">
+      <div class="logo" aria-hidden="true">SM</div>
+      <div>
+        <h1>Sri Mookambika Agro Foods <span style="font-weight:500;color:var(--muted);font-size:14px">Fresh produce • Farmer first</span></h1>
+      </div>
     </div>
+
+    <nav aria-label="Primary">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#programs">Programs</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <main id="main-content" tabindex="-1">
-    <section class="hero" aria-label="Hero">
-      <div class="bg-wrap" aria-hidden="true">
-        <img class="kb" src="images/corn-landscape.jpg" alt="Fields and crops" />
-      </div>
+  <main id="home">
+    <section class="hero">
+      <div class="hero-left">
+        <div class="fadein" id="hero-content">
+          <h2>Farm to Market — quality produce supported by modern farm practices</h2>
+          <p class="lead">We work with smallholder farmers to grow vegetables using drip irrigation, protected trellis production and buyer-ready handling so our supply is reliable and farm incomes improve.</p>
 
-      <div class="hero-inner container">
-        <div>
-          <div class="kicker pill">FSSC 22000 · STAR-K Kosher</div>
-          <h2 class="hero-title">Farm integrated gherkin and vegetable processing for global buyers</h2>
-          <p class="hero-lead leadin">We partner with 1,200+ contract farmers to deliver certified ingredients and finished goods. 65 FCL confirmed in the pipeline.</p>
-
-          <div class="stats" aria-hidden="true">
-            <div class="stat"><strong id="count-fcl">0</strong><div class="small">Confirmed FCL</div></div>
-            <div class="stat"><strong id="count-farmers">0</strong><div class="small">Contract farmers</div></div>
-            <div class="stat"><strong>FSSC</strong><div class="small">Food safety certified</div></div>
+          <div class="cta">
+            <a class="btn" href="#contact">Get a Quote</a>
+            <div class="small-muted">Or call <strong style="color:#fff">+91 9XXXXXXXX</strong></div>
           </div>
 
-          <div style="margin-top:18px">
-            <a class="btn btn-primary" href="investor_deck.pdf" id="downloadDeck" download>Request investor deck</a>
-            <a class="btn btn-ghost" href="investors.html" style="margin-left:10px">Investor brief</a>
+          <div class="row" style="margin-top:22px">
+            <div class="card" style="flex:1">
+              <h4>This month's highlights</h4>
+              <div class="badge">New trellis training sessions completed • Drip irrigation rolls out to 50 farms • Gherkin harvest ongoing</div>
+            </div>
+
+            <div class="card" style="width:320px">
+              <h4>Watch quick tour</h4>
+              <p class="small-muted">A virtual walk through our model plot — coming soon</p>
+              <div style="height:8px"></div>
+              <div class="gallery-preview" id="heroPreviewCard">
+                <img id="heroPreviewImg" src="images/corn-field.jpg" alt="corn field preview">
+                <div class="gallery-caption" id="heroPreviewCaption">Corn field — demonstration plot</div>
+                <div style="height:8px"></div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+                  <img src="images/fresh-gherkins.jpg" style="height:60px; border-radius:8px; object-fit:cover" alt="fresh gherkins">
+                  <img src="images/field-training.jpg" style="height:60px; border-radius:8px; object-fit:cover" alt="field training">
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
 
-        <aside class="card card-side" aria-hidden="true" style="text-align:center">
-          <img src="images/container-loaded.jpg" alt="Container loaded for export" style="width:100%;height:260px;object-fit:cover;border-radius:8px" />
-          <div class="small" style="margin-top:10px">Traceable batches ready for export</div>
-        </aside>
+      <aside class="hero-right fadein" id="hero-right">
+        <div class="thumbs" aria-hidden="false">
+          <button class="thumb-btn" data-large="images/corn-field.jpg" data-caption="Corn field — demonstration plot"><img src="images/corn-field.jpg" loading="lazy" alt="corn field small"></button>
+          <button class="thumb-btn" data-large="images/cucumber-corridor.jpg" data-caption="Cucumber corridor — trellis production"><img src="images/cucumber-corridor.jpg" loading="lazy" alt="cucumber corridor small"></button>
+        </div>
+
+        <div class="gallery-preview" style="margin-left:10px">
+          <img id="bigPreview" src="images/fresh-gherkins.jpg" alt="preview big">
+          <div class="gallery-caption" id="bigPreviewCaption">A quick gallery preview — click any thumbnail to open full image</div>
+        </div>
+      </aside>
+    </section>
+
+    <div class="sep"></div>
+
+    <section class="sections" id="about">
+      <div class="about fadein">
+        <h3 class="section-title">About us</h3>
+        <p>We partner with local farmers to adopt protected cultivation and irrigation, training and market linkages so they can supply consistent quality produce to buyers.</p>
+
+        <ul class="features">
+          <li>Field training and worker upskilling</li>
+          <li>Drip irrigation and resource efficient farming</li>
+          <li>Buyer-ready grading and cold chain handling</li>
+        </ul>
+      </div>
+
+      <aside class="fadein">
+        <div class="card">
+          <h4>Core areas</h4>
+          <ul style="color:var(--muted);margin:10px 0 0 18px">
+            <li>Protected trellis production</li>
+            <li>Drip irrigation rollout</li>
+            <li>Post-harvest handling</li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+
+    <section id="programs" style="margin-top:36px">
+      <h3 class="section-title">Programs & services</h3>
+      <div class="row fadein" style="margin-top:14px">
+        <div class="card" style="flex:1">
+          <h4>Trellis training</h4>
+          <p class="small-muted">Hands-on training for women and youth on trellis cropping and harvest best practices.</p>
+        </div>
+        <div class="card" style="flex:1">
+          <h4>Drip irrigation</h4>
+          <p class="small-muted">Efficient irrigation packages and ongoing system maintenance support.</p>
+        </div>
+        <div class="card" style="flex:1">
+          <h4>Buyers & logistics</h4>
+          <p class="small-muted">We coordinate prime-market deliveries and ensure buyer ready quality.</p>
+        </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container grid resp">
-        <div class="card reveal">
-          <h3>About</h3>
-          <p class="leadin muted">Farmer training, on-field QA and a certified processing facility that ships export-ready products.</p>
-          <p><a href="about.html">Read more</a></p>
-        </div>
+    <section id="gallery" style="margin-top:40px">
+      <h3 class="section-title">Gallery</h3>
+      <div class="gallery fadein" id="galleryGrid" aria-live="polite">
+        <!-- each item needs: data-large (path), data-caption -->
+        <a class="item" href="#" data-large="images/baby-corn.jpg" data-caption="Baby corn harvest — careful picking"><img src="images/baby-corn.jpg" alt="baby corn"></a>
+        <a class="item" href="#" data-large="images/buying-trays.jpg" data-caption="Buyer-ready trays being loaded"><img src="images/buying-trays.jpg" alt="buying trays"></a>
+        <a class="item" href="#" data-large="images/container-loaded.jpg" data-caption="Container loaded for export"><img src="images/container-loaded.jpg" alt="container loaded"></a>
+        <a class="item" href="#" data-large="images/container-loaded-back.jpg" data-caption="Container — internal view"><img src="images/container-loaded-back.jpg" alt="container back"></a>
 
-        <div class="card reveal">
-          <h3>Products</h3>
-          <p class="leadin muted">Natural vinegar, acetic acid and brine in export grades and flexible packaging.</p>
-          <p><a href="products.html">View products</a></p>
-        </div>
+        <a class="item" href="#" data-large="images/corn-field.jpg" data-caption="Corn field — healthy crop"><img src="images/corn-field.jpg" alt="corn field"></a>
+        <a class="item" href="#" data-large="images/corn-harvest.jpg" data-caption="Corn harvest in progress"><img src="images/corn-harvest.jpg" alt="corn harvest"></a>
+        <a class="item" href="#" data-large="images/corn-landscape.jpg" data-caption="Corn rows — landscape"><img src="images/corn-landscape.jpg" alt="corn landscape"></a>
+        <a class="item" href="#" data-large="images/cucumber-corridor.jpg" data-caption="Cucumber corridor — trellis lines"><img src="images/cucumber-corridor.jpg" alt="cucumber corridor"></a>
 
-        <div class="card reveal">
-          <h3>Investors</h3>
-          <p class="leadin muted">Short term working capital to fulfil confirmed orders. Revenue-share plus convertible note structures available.</p>
-          <p><a href="investors.html">Investor brief</a></p>
-        </div>
+        <a class="item" href="#" data-large="images/cucumber-flower.jpg" data-caption="Cucumber blossom"><img src="images/cucumber-flower.jpg" alt="cucumber flower"></a>
+        <a class="item" href="#" data-large="images/drip-irrigation.jpg" data-caption="Drip irrigation installed"><img src="images/drip-irrigation.jpg" alt="drip irrigation"></a>
+        <a class="item" href="#" data-large="images/farmer-engagement.jpg" data-caption="Farmer engagement and training"><img src="images/farmer-engagement.jpg" alt="farmer engagement"></a>
+        <a class="item" href="#" data-large="images/field-training.jpg" data-caption="Field training session"><img src="images/field-training.jpg" alt="field training"></a>
+
+        <a class="item" href="#" data-large="images/fresh-gherkins.jpg" data-caption="Fresh gherkins — packable quality"><img src="images/fresh-gherkins.jpg" alt="fresh gherkins"></a>
+        <a class="item" href="#" data-large="images/input-preparation.jpg" data-caption="Inputs prepared for spraying/mixing"><img src="images/input-preparation.jpg" alt="input preparation"></a>
+        <a class="item" href="#" data-large="images/inspection-team.jpg" data-caption="Inspection team evaluating crop"><img src="images/inspection-team.jpg" alt="inspection team"></a>
+        <a class="item" href="#" data-large="images/plant-diagnosis.jpg" data-caption="Plant diagnosis in field"><img src="images/plant-diagnosis.jpg" alt="plant diagnosis"></a>
+
+        <a class="item" href="#" data-large="images/raw-produce-handling.jpg" data-caption="Raw produce handling for market"><img src="images/raw-produce-handling.jpg" alt="raw produce handling"></a>
+        <a class="item" href="#" data-large="images/sowing-mulch.jpg" data-caption="Sowing on mulch film"><img src="images/sowing-mulch.jpg" alt="sowing mulch"></a>
+        <a class="item" href="#" data-large="images/staking-workers.jpg" data-caption="Staking workers preparing trellis"><img src="images/staking-workers.jpg" alt="staking workers"></a>
+        <a class="item" href="#" data-large="images/training-session.jpg" data-caption="Training session with women farmers"><img src="images/training-session.jpg" alt="training session"></a>
       </div>
     </section>
 
-    <section id="gallery" class="section">
-      <div class="container">
-        <h3 class="h2">Gallery</h3>
-        <div class="gallery reveal" id="galleryGrid">
-          <img src="images/inspection-team.jpg" alt="Field inspection" loading="lazy">
-          <img src="images/field-training.jpg" alt="Farmer training" loading="lazy">
-          <img src="images/sowing-mulch.jpg" alt="Sowing and mulch" loading="lazy">
-          <img src="images/staking-workers.jpg" alt="Staking and trellis" loading="lazy">
-          <img src="images/drip-irrigation.jpg" alt="Drip irrigation" loading="lazy">
-          <img src="images/fresh-gherkins.jpg" alt="Fresh gherkins" loading="lazy">
-          <img src="images/container-loaded-1.jpg" alt="Container loaded 1" loading="lazy">
-          <img src="images/cucumber-flower.jpg" alt="Cucumber flower" loading="lazy">
-        </div>
+    <footer id="contact">
+      <div>
+        <div style="font-weight:700">Sri Mookambika Agro Foods</div>
+        <div class="small-muted" style="margin-top:6px">Email: info@example.com • Phone +91 9XXXXXXXX</div>
       </div>
-    </section>
+      <div class="small-muted">© <span id="yr"></span> All rights reserved</div>
+    </footer>
   </main>
+</div>
 
-  <footer class="site-footer">
-    <div class="container">© <span id="year"></span> Sri Mookambika Agro Foods LLP · FSSC 22000 · STAR-K Kosher</div>
-  </footer>
-
-  <div class="lightbox" aria-hidden="true">
-    <img alt="" />
+<!-- lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="box" role="document">
+    <img src="" id="lightboxImg" alt="">
+    <div class="caption" id="lightboxCaption" aria-live="polite"></div>
+    <div class="lb-nav lb-prev" id="lbPrev" tabindex="0" role="button" aria-label="Previous image">‹</div>
+    <div class="lb-nav lb-next" id="lbNext" tabindex="0" role="button" aria-label="Next image">›</div>
   </div>
+  <div class="close" id="lbClose" role="button" aria-label="Close lightbox">✕</div>
+</div>
 
-  <script src="assets/js/main.js" defer></script>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    window.addEventListener('load', ()=> {
-      // counters will animate in main.js reveal handlers but keep safe fallback
-      const animate = (id, to, ms=1200)=>{
-        const el=document.getElementById(id); if(!el) return;
-        let cur=0, step=Math.max(1,Math.floor(to/(ms/16)));
-        const tick=()=>{ cur+=step; if(cur>=to) el.textContent=to; else { el.textContent=cur; requestAnimationFrame(tick) } };
-        requestAnimationFrame(tick);
-      };
-      animate('count-fcl',65); animate('count-farmers',1200);
+<script>
+  // set year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // fade-in observer
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting) e.target.classList.add('visible');
     });
-  </script>
+  }, {threshold:0.12});
+  document.querySelectorAll('.fadein').forEach(el=>observer.observe(el));
+
+  // ---- HERO THUMBNAILS -> preview + open lightbox ----
+  const bigPreview = document.getElementById('bigPreview');
+  const bigPreviewCaption = document.getElementById('bigPreviewCaption');
+  const heroPreviewImg = document.getElementById('heroPreviewImg');
+  const heroPreviewCaption = document.getElementById('heroPreviewCaption');
+
+  document.querySelectorAll('.thumb-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=> {
+      const url = btn.getAttribute('data-large') || btn.querySelector('img').src;
+      const caption = btn.getAttribute('data-caption') || btn.querySelector('img').alt || '';
+      bigPreview.src = url;
+      bigPreviewCaption.textContent = caption || 'Preview';
+      heroPreviewImg.src = url;
+      heroPreviewCaption.textContent = caption || '';
+    });
+    // keyboard accessible
+    btn.addEventListener('keydown', (e)=> { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); btn.click(); } });
+    // also open full lightbox on double click or ctrl+click
+    btn.addEventListener('dblclick', ()=> openLightbox(btn.getAttribute('data-large'), btn.getAttribute('data-caption')));
+  });
+
+  // clicking big preview opens lightbox
+  bigPreview.addEventListener('click', ()=> {
+    const url = bigPreview.src;
+    const caption = bigPreviewCaption.textContent || bigPreview.alt || '';
+    openLightbox(url, caption);
+  });
+
+  // ---- GALLERY ITEMS -> open lightbox + show caption ----
+  const items = Array.from(document.querySelectorAll('.gallery .item'));
+  items.forEach((it, idx) => {
+    // set accessible attributes
+    it.setAttribute('role','button');
+    it.setAttribute('tabindex','0');
+
+    // show caption overlay (already provided in CSS)
+    const captionText = it.getAttribute('data-caption') || it.querySelector('img').alt || '';
+    const meta = document.createElement('div');
+    meta.className = 'meta';
+    meta.innerHTML = `<span style="font-weight:700">${captionText}</span><span class="small-muted">View</span>`;
+    it.appendChild(meta);
+
+    it.addEventListener('click', (ev)=>{
+      ev.preventDefault();
+      const url = it.getAttribute('data-large') || it.querySelector('img').src;
+      openLightbox(url, captionText);
+      currentIndex = idx;
+    });
+    it.addEventListener('keydown', (e)=> { if(e.key==='Enter' || e.key===' ') { e.preventDefault(); it.click(); } });
+  });
+
+  // ---- LIGHTBOX logic with keyboard nav ----
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightboxImg');
+  const lbCaption = document.getElementById('lightboxCaption');
+  const lbClose = document.getElementById('lbClose');
+  const lbPrev = document.getElementById('lbPrev');
+  const lbNext = document.getElementById('lbNext');
+  let currentIndex = 0;
+
+  function openLightbox(url, caption=''){
+    if(!url) return;
+    lbImg.src = url;
+    lbImg.alt = caption || 'Image';
+    lbCaption.textContent = caption || '';
+    lb.style.display = 'flex';
+    lb.setAttribute('aria-hidden','false');
+    setTimeout(()=> lb.style.opacity = 1, 10);
+    // set index if url belongs to gallery
+    const idx = items.findIndex(it => (it.getAttribute('data-large') === url) || (it.querySelector('img').src === url));
+    if(idx >= 0) currentIndex = idx;
+    // focus close for keyboard users
+    lbClose.focus();
+  }
+
+  function closeLightbox(){
+    lb.style.opacity = 0;
+    lb.setAttribute('aria-hidden','true');
+    setTimeout(()=> { lb.style.display='none'; lbImg.src=''; lbCaption.textContent=''; }, 220);
+  }
+
+  lbClose.addEventListener('click', closeLightbox);
+  lb.addEventListener('click', (e)=> { if(e.target===lb) closeLightbox(); });
+
+  lbPrev.addEventListener('click', ()=> { navigate(-1); });
+  lbNext.addEventListener('click', ()=> { navigate(1); });
+  lbPrev.addEventListener('keydown', (e)=> { if(e.key==='Enter' || e.key===' ') { e.preventDefault(); navigate(-1); } });
+  lbNext.addEventListener('keydown', (e)=> { if(e.key==='Enter' || e.key===' ') { e.preventDefault(); navigate(1); } });
+
+  function navigate(dir){
+    if(items.length === 0) return;
+    currentIndex = (currentIndex + dir + items.length) % items.length;
+    const it = items[currentIndex];
+    const url = it.getAttribute('data-large') || it.querySelector('img').src;
+    const captionText = it.getAttribute('data-caption') || it.querySelector('img').alt || '';
+    lbImg.src = url;
+    lbImg.alt = captionText;
+    lbCaption.textContent = captionText;
+  }
+
+  // keyboard events
+  document.addEventListener('keydown', (e)=>{
+    if(lb.style.display === 'flex'){
+      if(e.key === 'Escape') closeLightbox();
+      if(e.key === 'ArrowLeft') navigate(-1);
+      if(e.key === 'ArrowRight') navigate(1);
+    }
+  });
+
+  // lazy fallback for images (swap to tiny inline svg if missing)
+  document.querySelectorAll('img').forEach(img=>{
+    img.addEventListener('error', ()=> {
+      img.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420"><rect width="100%" height="100%" fill="%23081214"/><text x="50%" y="50%" fill="%239fb0b3" font-size="18" text-anchor="middle" alignment-baseline="central">Image not found</text></svg>';
+    });
+  });
+
+  // smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', function(e){
+      const targetSelector = this.getAttribute('href');
+      const t = document.querySelector(targetSelector);
+      if(!t) return;
+      e.preventDefault();
+      t.scrollIntoView({behavior:'smooth', block:'start'});
+      // don't clutter history when clicking multiple times
+      history.replaceState(null,'', targetSelector);
+    });
+  });
+
+  // simple accessibility: focusable gallery items order (tabindex)
+  document.querySelectorAll('.gallery .item').forEach((el,ix)=> el.setAttribute('tabindex', 0));
+
+  // ensure hero fade-in and right column fade-in are observed
+  document.querySelectorAll('.fadein').forEach(el=>observer.observe(el));
+</script>
+
 </body>
 </html>

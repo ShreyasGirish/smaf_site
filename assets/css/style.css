@@ -1,151 +1,346 @@
-/* assets/css/style.css
-   Unified site stylesheet
-   Calm typography, consistent spacing, subtle animation, page transition hooks
-*/
+/* EARTHY PREMIUM THEME — SMAF WEBSITE */
+/* Clean, premium, warm agri export brand design */
 
-/* ---------- palette & tokens ---------- */
-:root{
-  --bg: #fbfbf8;
-  --card: #ffffff;
-  --green: #2f7a3e;
-  --warm: #b38b3b;
-  --deep: #0b2a1a;
-  --muted: #6b6b6b;
-  --glass: rgba(255,255,255,0.7);
-  --maxw: 1150px;
-  --radius: 12px;
-  --shadow-1: 0 8px 28px rgba(10,15,10,0.06);
-  --shadow-2: 0 20px 50px rgba(8,12,10,0.08);
-  --space: 20px;
-  --transition: 380ms cubic-bezier(.2,.9,.2,1);
-  --header-height: 72px;
+:root {
+  --bg: #f9f5ef;              /* Warm light background */
+  --bg-dark: #e6dfd2;         /* Slightly darker cream for contrast */
+  --text: #2b2a28;            /* Deep, elegant neutral */
+  --muted: #7a736b;           /* Warm muted text */
+  --green: #2f6d41;           /* Earthy green */
+  --green-dark: #255534;      /* Stronger green */
+  --gold: #b8924c;            /* Warm golden accent */
+  --gold-light: #d6b878;      /* Softer gold */
+  --white: #ffffff;
+  
+  --radius: 14px;
+  --shadow-soft: 0 6px 18px rgba(0,0,0,0.08);
+  --shadow-card: 0 10px 30px rgba(0,0,0,0.12);
+
+  --font-title: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
 }
 
-/* ---------- fonts ---------- */
-/* Playfair Display for hero titles, Inter for UI */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap');
-
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  background:linear-gradient(180deg, #fbfdfb, #fbfbf8);
-  color:var(--deep);
-  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  line-height:1.55;
-  -webkit-text-size-adjust:100%;
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
 }
 
-/* container */
-.container{
-  max-width:var(--maxw);
-  margin:0 auto;
-  padding:20px;
+.container {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 24px;
 }
 
-/* navbar / header */
-.site-nav{
-  position:sticky;
-  top:0;
-  z-index:90;
-  backdrop-filter:blur(6px);
-  background:rgba(255,255,255,0.7);
-  border-bottom:1px solid rgba(11,18,12,0.04);
-  box-shadow:0 6px 18px rgba(10,12,10,0.02);
+/* HEADER ------------------------------------------------- */
+header {
+  background: rgba(255,255,255,0.65);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
-.site-nav .container{display:flex;align-items:center;gap:14px;height:var(--header-height)}
-.brand{display:flex;align-items:center;gap:12px}
-.brand .logo{width:48px;height:48px;border-radius:10px;object-fit:cover;box-shadow:var(--shadow-1);flex-shrink:0}
-.brand h1{font-family:'Playfair Display',serif;margin:0;font-size:17px;color:var(--deep);line-height:1}
-.brand .tag{font-size:12px;color:var(--muted);margin-top:2px}
 
-/* nav */
-.nav-links{margin-left:auto;display:flex;gap:10px;align-items:center}
-.nav-links a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:9px;font-weight:600;font-size:14px}
-.nav-links a:hover, .nav-links a:focus{color:var(--green);outline:none;background:rgba(47,122,62,0.06)}
-.nav-links a.active{color:var(--green);font-weight:700}
-
-/* hero pattern */
-.hero{
-  display:grid;
-  grid-template-columns:1fr 420px;
-  gap:28px;
-  align-items:center;
-  min-height:66vh;
-  position:relative;
-  overflow:hidden;
-  padding:44px 20px;
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.hero .bg-wrap{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.82}
-.hero .bg-wrap img{width:120%;height:100%;object-fit:cover;filter:contrast(.98) saturate(.96);transform:translateX(-6%);transition:transform 18s linear}
-.hero .hero-inner{position:relative;z-index:2}
-.kicker{display:inline-block;background:var(--card);padding:8px 12px;border-radius:999px;font-weight:700;font-size:13px;color:var(--deep);box-shadow:var(--shadow-1)}
-.hero-title{font-family:'Playfair Display',serif;font-size:40px;margin:14px 0 6px;color:var(--deep);line-height:1.02}
-.hero-lead{color:var(--muted);max-width:68ch;margin-bottom:16px}
 
-/* stats */
-.stats{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
-.stat{background:linear-gradient(180deg,var(--card), #fbfbfb);padding:12px;border-radius:10px;min-width:120px;text-align:left;box-shadow:var(--shadow-1)}
-.stat strong{display:block;color:var(--green);font-size:18px}
-
-/* cards / sections */
-.section{padding:44px 20px}
-.grid{display:grid;gap:16px}
-.grid.cols-3{grid-template-columns:repeat(3,1fr)}
-.grid.resp{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-
-.card{background:var(--card);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow-2);border:1px solid rgba(10,12,10,0.02)}
-.card h3{margin:0 0 8px;font-size:18px}
-
-/* gallery */
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
-.gallery figure{margin:0;border-radius:10px;overflow:hidden;position:relative}
-.gallery img{width:100%;height:160px;object-fit:cover;display:block;transition:transform var(--transition),box-shadow var(--transition)}
-.gallery img:hover{transform:translateY(-6px) scale(1.04);box-shadow:0 22px 60px rgba(8,12,8,0.12)}
-
-/* certificates placeholder */
-.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
-.cert{display:flex;flex-direction:column;gap:8px;align-items:center;padding:12px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbfbfb);box-shadow:var(--shadow-1)}
-.cert img{width:100%;height:140px;object-fit:contain;border-radius:8px;background:#fff;padding:8px}
-
-/* lightbox */
-.lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.7);z-index:1400}
-.lightbox.open{display:flex}
-.lightbox img{max-width:94vw;max-height:86vh;border-radius:10px}
-
-/* reveal animation */
-.reveal{opacity:0;transform:translateY(16px);transition:opacity .66s ease,transform .66s ease}
-.reveal.show{opacity:1;transform:none}
-
-/* page transition hooks */
-/* main wrapper fades on leave/enter */
-.page-fade-enter{opacity:0;transform:translateY(6px)}
-.page-fade-enter.page-fade-enter-active{opacity:1;transform:none;transition:opacity var(--transition),transform var(--transition)}
-.page-fade-leave{opacity:1}
-.page-fade-leave.page-fade-leave-active{opacity:0;transform:translateY(-8px);transition:opacity var(--transition),transform var(--transition)}
-
-/* footer */
-.site-footer{background:var(--deep);color:white;padding:26px 20px;text-align:center}
-.site-footer a{color:#eaf7ea;text-decoration:none}
-
-/* helpers */
-.leadin{color:var(--muted);max-width:760px}
-.small{font-size:13px;color:var(--muted)}
-.btn{display:inline-block;padding:10px 14px;border-radius:10px;font-weight:700;border:none;cursor:pointer}
-.btn-primary{background:var(--green);color:white;box-shadow:0 12px 44px rgba(47,122,62,0.12)}
-.btn-ghost{background:transparent;border:1px solid rgba(11,18,12,0.06);color:var(--deep)}
-
-/* responsive */
-@media (max-width:960px){
-  .hero{grid-template-columns:1fr;padding:28px 16px}
-  .brand h1{font-size:15px}
-  .hero-title{font-size:30px}
-  .nav-links{display:none}
-  .stats{gap:10px}
+.brand {
+  display: flex;
+  gap: 14px;
+  align-items: center;
 }
-@media (max-width:520px){
-  .gallery img{height:120px}
-  .cert img{height:120px}
+
+.brand h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: var(--font-title);
+  color: var(--green-dark);
+}
+
+.brand-sub {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* NAV */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--green-dark);
+  transform: translateY(-2px);
+}
+
+/* HERO ------------------------------------------------- */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 36px;
+  padding: 48px 0;
+  align-items: center;
+}
+
+.hero-left h2 {
+  font-family: var(--font-title);
+  font-size: 38px;
+  margin: 0 0 14px;
+  color: var(--green-dark);
+}
+
+.hero-left .lead {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* CTA button */
+.cta {
+  background: var(--green-dark);
+  color: white;
+  padding: 12px 22px;
+  border-radius: var(--radius);
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.cta:hover {
+  background: var(--green);
+  transform: translateY(-3px);
+}
+
+/* CARD ------------------------------------------------- */
+.card {
+  background: var(--white);
+  padding: 18px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* SERVICE CARDS ---------------------------------------- */
+.service {
+  background: var(--white);
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.service h3 {
+  font-family: var(--font-title);
+  margin-top: 0;
+  color: var(--green-dark);
+}
+
+/* GALLERY ---------------------------------------------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px,1fr));
+  gap: 14px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+  transition: 0.35s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05) translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+/* CONTACT FORM ---------------------------------------- */
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(0,0,0,0.1);
+  background: var(--white);
+  font-family: var(--font-body);
+  color: var(--text);
+}
+
+button, .cta {
+  cursor: pointer;
+}
+
+/* FOOTER ----------------------------------------------- */
+footer {
+  text-align: center;
+  padding: 28px 0;
+  margin-top: 40px;
+  background: var(--bg-dark);
+  color: var(--muted);
+  font-size: 14px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+/* REVEAL ANIMATION ------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+/* RESPONSIVE ------------------------------------------- */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  nav ul {
+    display: none;
+  }
+}
+
+/* HEADER UPGRADE */
+.header {
+  background: rgba(255,255,255,0.65);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Desktop nav */
+.nav-desktop a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 600;
+}
+.nav-desktop a:hover {
+  color: var(--green-dark);
+}
+
+/* Hamburger button */
+.hamburger {
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+  color: var(--green-dark);
+}
+
+/* Mobile menu panel */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  padding: 14px 22px;
+  background: var(--bg);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.mobile-menu a {
+  text-decoration: none;
+  color: var(--green-dark);
+  font-weight: 600;
+  padding: 10px 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .nav-desktop {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  .mobile-menu.show {
+    display: flex;
+  }
+}
+
+/* ===========================
+   STEP 2 — Sticky Navbar + Smooth Scroll
+=========================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Sticky Navigation */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: rgba(15, 23, 28, 0.65); /* Semi-transparent on scroll */
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* When scrolled, navbar becomes slightly more solid */
+.scrolled-header {
+  background: rgba(15, 23, 28, 0.9);
+  transition: background 0.25s ease;
+}
+
+/* Mobile nav button styling (hamburger) */
+.mobile-menu-toggle {
+  cursor: pointer;
+  font-size: 1.6rem;
+  padding: 4px 10px;
+  color: #fff;
+}
+
+/* Mobile dropdown menu */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  background: rgba(15, 23, 28, 0.95);
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.mobile-nav.show {
+  display: flex;
+}
+
+/* Make nav links cleaner */
+.site-nav a {
+  color: #e4e8eb;
+  text-decoration: none;
+  padding: 6px 12px;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.site-nav a:hover {
+  color: #4ade80; /* green highlight */
 }
